@@ -5,7 +5,10 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run: echo $My_name
+      - run: 
+        - name: "echo an env var that is part of our project"
+        - command: |
+            echo $My_name
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
