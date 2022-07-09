@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run: 
-        - name: "echo an env var that is part of our project"
-        - command: |
+          name: "echo an env var that is part of our project"
+          command: |
             echo $My_name
 
 # Invoke jobs via workflows
