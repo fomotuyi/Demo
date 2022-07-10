@@ -1,8 +1,10 @@
 version: 2.1
+defaults: &defaults
+  docker:
+      - image: circleci/node:13.8.0
 jobs:
   Print_name:
-    docker:
-      - image: circleci/node:13.8.0
+    <<: *defaults
     steps:
       - checkout
       - run: 
@@ -10,8 +12,7 @@ jobs:
           command: |
             echo $My_name
   say_hello_world_output:
-    docker:
-      - image: circleci/node:13.8.0
+    <<: *defaults
     steps:
     - checkout
     - run: echo "hello world!" > ~/output.txt
@@ -22,8 +23,7 @@ jobs:
 
 
   print_output_file:
-    docker:
-      - image: circleci/node:13.8.0
+    <<: *defaults
     steps:
       - attach_workspace:
           at: ~/
